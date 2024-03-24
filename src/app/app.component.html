@@ -1,43 +1,59 @@
-<div class="webpage">
-  <header>
-    <h1 *ngIf="title">{{ title }}</h1>
-  </header>
-  
-  <main>
-    <div class="projects">
-      <div *ngFor="let project of filteredProjects">
-        <h2>{{ project.name }}</h2>
-        <p>{{ project.excerpt }}</p>
-        <p class="category" *ngIf="project.category">
-          Category: 
-          <a (click)="setCategoryFilter(project.category)">{{ project.category.name }}</a>
-        </p>   
-        <p class="tags" *ngIf="project.tags">
-          Tags: 
-          <span *ngFor="let tag of project.tags; let isLast=last">{{ tag.name }}<span *ngIf="!isLast">, </span></span>
-        </p>
-      </div>  
-    </div>
-    
-    <div class="filters">
-      <div (click)="clearCategoryFilter()">
-        <span *ngIf="activeFilter"><h2>Filter</h2><a>Clear: {{ activeFilter.name }}</a></span>
+<header>
+  <h1>{{ title }}</h1>
+  <nav>
+    <ul>
+      <li>
+        <a
+          routerLink="/"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ariaCurrentWhenActive="page"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/projects"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ariaCurrentWhenActive="page"
+          >Projects</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/about"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          ariaCurrentWhenActive="page"
+          >About Me</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section id="side-nav" *ngIf="router.url === '/projects'">
+    <article *ngIf="categoryFilter || tagFilter">
+      <h2>Filter:</h2>
+      <div class="current-filter" (click)="clearFilters()">
+        {{ categoryFilter?.name || tagFilter?.name }}
+        <i class="bi bi-trash"></i>
       </div>
-      <h2>Categories</h2>
-      <div *ngFor="let category of categories" (click)="setCategoryFilter(category)">
-        <a (click)="setCategoryFilter(category)">{{ category.name }}</a>
-      </div>
-  
-      <h2>Tags</h2>
-      <div *ngFor="let tag of tags">
-        {{ tag.name }}
-      </div>
-    </div>
-  </main>
-  
-  <footer>
-    <h4 *ngIf="author"> &copy; {{ date | date:'yyyy' }} {{ author }}</h4>
-  </footer>
-</div>
-
-<router-outlet />
+    </article>
+    <article id="categories">
+      <app-categories
+        [categoryFilter]="categoryFilter"
+        (newCategoryFilterEvent)="setCategoryFilter($event)"
+      ></app-categories>
+    </article>
+    <article id="tags">
+      <app-tags
+        [tagFilter]="tagFilter"
+        (newTagFilterEvent)="setTagFilter($event)"
+      ></app-tags>
+    </article>
+  </section>
+  <router-outlet></router-outlet>
+</main>
+<footer>&copy; {{ date.getFullYear() }} {{ author }}</footer>
