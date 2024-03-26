@@ -37,7 +37,7 @@ import { ProjectFilterPipe } from './pipes/project-filter.pipe';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = "Clayton Ikuta's Portfolio";
+  title = 'Clayton Ikuta';
   date = new Date();
   author = 'Clayton Ikuta';
 
