@@ -1,5 +1,15 @@
 .header {
-  background-color: #f8f9fa;
-  padding: 20px;
   text-align: center;
+}
+
+article {
+  padding: 20px;
+  height: 100%;
+  margin: 0px;
+}
+
+main {
+  background-image: url("../../../assets/images/landing.JPG");
+  background-size: cover;
+  background-position: center;
 }
