@@ -1,36 +1,5 @@
 <header>
   <h1>{{ title }}</h1>
-  <nav>
-    <ul>
-      <li>
-        <a
-          routerLink="/"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          ariaCurrentWhenActive="page"
-          >Home</a
-        >
-      </li>
-      <li>
-        <a
-          routerLink="/projects"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          ariaCurrentWhenActive="page"
-          >Projects</a
-        >
-      </li>
-      <li>
-        <a
-          routerLink="/about"
-          routerLinkActive="active"
-          [routerLinkActiveOptions]="{ exact: true }"
-          ariaCurrentWhenActive="page"
-          >About Me</a
-        >
-      </li>
-    </ul>
-  </nav>
 </header>
 <main>
   <section id="side-nav" *ngIf="router.url === '/projects'">
