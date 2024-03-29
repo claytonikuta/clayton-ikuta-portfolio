@@ -1,11 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {
-  Router,
-  RouterOutlet,
-  RouterLink,
-  RouterLinkActive,
-} from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectComponent } from './components/project/project.component';
@@ -25,8 +20,6 @@ import { ProjectFilterPipe } from './pipes/project-filter.pipe';
   imports: [
     RouterOutlet,
     CommonModule,
-    RouterLink,
-    RouterLinkActive,
     ProjectFilterPipe,
     ProjectsComponent,
     ProjectComponent,
