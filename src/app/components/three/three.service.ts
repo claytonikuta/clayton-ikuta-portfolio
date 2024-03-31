@@ -64,7 +64,7 @@ export class ThreeService implements OnDestroy {
     this.light.position.z = 10;
     this.scene.add(this.light);
 
-    const geometry = new THREE.SphereGeometry(1, 32, 32);
+    const geometry = new THREE.SphereGeometry(1, 64, 64);
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         mouse: { value: new THREE.Vector3(0, 0, 5) },

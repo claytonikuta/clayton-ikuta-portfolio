@@ -6,11 +6,13 @@ import {
   PLATFORM_ID,
   Inject,
 } from '@angular/core';
-import { isPlatformBrowser } from '@angular/common';
+import { isPlatformBrowser, CommonModule } from '@angular/common';
 import { ThreeService } from './three.service';
 
 @Component({
   selector: 'app-three',
+  standalone: true,
+  imports: [CommonModule],
   templateUrl: './three.component.html',
   styleUrls: ['./three.component.scss'],
 })
