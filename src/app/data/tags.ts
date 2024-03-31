@@ -8,4 +8,5 @@ export const TAGS: Tag[] = [
   { id: 5, name: 'React', slug: 'react' },
   { id: 6, name: 'HTML', slug: 'html' },
   { id: 7, name: 'CSS', slug: 'css' },
+  { id: 8, name: 'C++', slug: 'c++' },
 ];
