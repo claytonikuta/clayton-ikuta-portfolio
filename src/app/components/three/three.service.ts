@@ -1,3 +1,5 @@
+// three.service.ts
+
 import * as THREE from 'three';
 import { ElementRef, Injectable, NgZone, OnDestroy } from '@angular/core';
 

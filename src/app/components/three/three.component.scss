@@ -1,3 +1,5 @@
+// three.component.scss
+
 h1 {
   font-weight: 300;
   font-size: 8rem;
@@ -17,38 +19,9 @@ p {
   font-weight: 300;
 }
 
-.landing {
-  // padding-left: 5rem;
-  // padding-right: 5rem;
-  height: 100%;
-  margin: 0px;
-  display: flex;
-}
-
-// article {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100%;
-// }
-
-// app-three {
-//   height: 100%;
-// }
-
 .header {
   padding-left: 5rem;
 }
-
-// main {
-//   display: flex;
-//   flex-direction: column;
-//   justify-content: center;
-//   align-items: center;
-//   height: 100%;
-//   width: 100%;
-// }
 
 .engine-wrapper {
   display: flex;

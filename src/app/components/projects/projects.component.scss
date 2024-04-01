@@ -1,3 +1,5 @@
+// projects.component.scss
+
 #projects {
   width: 100%;
 }
@@ -64,5 +66,51 @@ article {
 footer {
   font-size: 0.8rem;
   padding-right: 1rem;
+  align-self: flex-end;
+}
+
+main {
+  display: flex;
+  padding-top: 1rem;
+  flex-grow: 1;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-width: 460px;
+  width: 100%;
+  #side-nav {
+    margin-right: 1rem;
+    text-align: right;
+    background-color: #eee;
+    border-radius: 1rem;
+    padding: 1rem;
+    align-self: flex-start;
+    width: 10rem;
+    div {
+      cursor: pointer;
+
+      &.active {
+        background-color: #ccc;
+      }
+    }
+  }
+
+  #projects,
+  #project {
+    width: 100%;
+  }
+}
+app-projects,
+app-project {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+}
+footer {
+  font-size: 0.8rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
   align-self: flex-end;
 }
