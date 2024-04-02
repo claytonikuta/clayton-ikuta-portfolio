@@ -1,0 +1,116 @@
+// projects.component.scss
+
+#projects {
+  width: 100%;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+article {
+  width: 80%;
+  min-height: 10rem;
+  min-width: 15rem;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: rgb(220, 219, 218);
+  border-radius: 0.3rem 0.3rem 0 0;
+
+  h2 {
+    margin: 0;
+  }
+
+  footer {
+    align-self: center;
+    margin-top: 1rem;
+    font-size: 0.8rem;
+    background-color: #eee;
+    width: 100%;
+    span {
+      cursor: pointer;
+    }
+    div {
+      padding: 0.6rem;
+      justify-content: space-between;
+    }
+  }
+  a,
+  a:visited {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+#projects {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+}
+footer {
+  font-size: 0.8rem;
+  padding-right: 1rem;
+  align-self: flex-end;
+}
+
+main {
+  display: flex;
+  padding-top: 1rem;
+  flex-grow: 1;
+  flex-direction: row-reverse;
+  justify-content: space-between;
+  align-items: flex-start;
+  min-width: 460px;
+  width: 100%;
+  #side-nav {
+    margin-right: 1rem;
+    text-align: right;
+    background-color: #eee;
+    border-radius: 1rem;
+    padding: 1rem;
+    align-self: flex-start;
+    width: 10rem;
+    div {
+      cursor: pointer;
+
+      &.active {
+        background-color: #ccc;
+      }
+    }
+  }
+
+  #projects,
+  #project {
+    width: 100%;
+  }
+}
+app-projects,
+app-project {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+  grid-gap: 10px;
+  justify-items: center;
+}
+footer {
+  font-size: 0.8rem;
+  padding-right: 1rem;
+  padding-bottom: 1rem;
+  align-self: flex-end;
+}

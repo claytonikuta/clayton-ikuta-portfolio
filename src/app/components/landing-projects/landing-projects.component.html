@@ -1,0 +1,17 @@
+<section id="projects">
+  <article *ngFor="let project of projects">
+    <a (click)="openProject(project)">
+      <section class="project-card">
+        <img
+          *ngIf="project.image"
+          [src]="'assets/images/' + project.image"
+          alt="Image of {{ project.name }}"
+        />
+        <div>
+          <h2>{{ project.name | uppercase }}</h2>
+          <div>{{ project.excerpt }}</div>
+        </div>
+      </section>
+    </a>
+  </article>
+</section>

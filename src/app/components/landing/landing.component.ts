@@ -4,6 +4,7 @@ import { ThreeComponent } from '../three/three.component';
 import { ProjectsComponent } from '../projects/projects.component';
 import { OtherComponent } from '../other/other.component';
 import { AboutComponent } from '../about/about.component';
+import { LandingProjectsComponent } from '../landing-projects/landing-projects.component';
 
 @Component({
   selector: 'app-landing',
@@ -14,6 +15,7 @@ import { AboutComponent } from '../about/about.component';
     ProjectsComponent,
     AboutComponent,
     OtherComponent,
+    LandingProjectsComponent,
   ],
   templateUrl: './landing.component.html',
   styleUrl: './landing.component.scss',
