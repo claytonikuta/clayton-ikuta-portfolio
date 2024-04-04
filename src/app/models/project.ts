@@ -10,6 +10,7 @@ export class Project {
   'url': string | null;
   'published_date': string | null;
   'image': string | null;
+  'video': string | null;
   'thumb': string | null;
   'category_id': number | null;
   'created_at': string;

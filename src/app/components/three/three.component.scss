@@ -1,0 +1,36 @@
+// three.component.scss
+
+h1 {
+  font-weight: 300;
+  font-size: 8rem;
+  margin: 0;
+}
+
+h2 {
+  font-weight: 300;
+  font-size: 4rem;
+  margin: 0;
+}
+
+p {
+  font-size: 1.5rem;
+  margin-top: 6rem;
+  margin-bottom: 0;
+  font-weight: 300;
+}
+
+.header {
+  padding-left: 5rem;
+}
+
+.engine-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 100%;
+}
+
+// .engine-wrapper canvas {
+//   padding-top: 10rem;
+//   padding-left: 10rem;
+// }

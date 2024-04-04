@@ -2,11 +2,15 @@ header {
   background-color: #111;
   width: 100%;
   color: white;
+}
+
+h1 {
   padding-left: 5rem;
-  padding-right: 5rem;
+  cursor: pointer;
 }
 
 main {
+  box-sizing: border-box;
   display: flex;
   padding-top: 1rem;
   flex-grow: 1;
@@ -15,6 +19,7 @@ main {
   align-items: flex-start;
   min-width: 460px;
   width: 100%;
+
   #side-nav {
     margin-right: 1rem;
     text-align: right;
@@ -45,6 +50,7 @@ app-project {
   grid-gap: 10px;
   justify-items: center;
 }
+
 footer {
   font-size: 0.8rem;
   padding-right: 1rem;

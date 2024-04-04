@@ -1,3 +1,26 @@
+<!-- projects.component.html -->
+
+<section id="side-nav" *ngIf="router.url === '/projects'">
+  <article *ngIf="categoryFilter || tagFilter">
+    <h2>Filter:</h2>
+    <div class="current-filter" (click)="clearFilters()">
+      {{ categoryFilter?.name || tagFilter?.name }}
+      <i class="bi bi-trash"></i>
+    </div>
+  </article>
+  <article id="categories">
+    <app-categories
+      [categoryFilter]="categoryFilter"
+      (newCategoryFilterEvent)="setCategoryFilter($event)"
+    ></app-categories>
+  </article>
+  <!-- <article id="tags">
+    <app-tags
+      [tagFilter]="tagFilter"
+      (newTagFilterEvent)="setTagFilter($event)"
+    ></app-tags>
+  </article> -->
+</section>
 <section id="projects">
   <article
     *ngFor="let project of projects | projectFilter : tagFilter"
@@ -17,7 +40,7 @@
         </div>
       </section>
     </a>
-    <footer>
+    <!-- <footer>
       <div
         *ngIf="project.category"
         (click)="setCategoryFilter(project.category)"
@@ -30,6 +53,6 @@
           {{ tag.name }}
         </span>
       </div>
-    </footer>
+    </footer> -->
   </article>
 </section>
