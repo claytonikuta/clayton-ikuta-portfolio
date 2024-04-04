@@ -41,16 +41,13 @@ export class ThreeService implements OnDestroy {
 
     this.scene = new THREE.Scene();
 
-    const objectSize = 2; // the size of the object
-    const canvasSize = 400; // the size of the canvas
+    const objectSize = 2;
+    const canvasSize = 400;
 
-    // Start with an initial guess for fov.
-    let fov = 75; // This can be any reasonable value.
+    let fov = 75;
 
-    // Calculate the distance where the object fits exactly within the field of view.
     let distance = (0.5 * canvasSize) / Math.tan(((Math.PI / 180) * fov) / 2);
 
-    // Update fov based on the calculated distance.
     fov = 2 * Math.atan(objectSize / (2 * distance)) * (180 / Math.PI);
 
     this.camera = new THREE.PerspectiveCamera(

@@ -34,33 +34,9 @@ export class AppComponent {
   date = new Date();
   author = 'Clayton Ikuta';
 
-  categoryFilter: Category | undefined;
-  tagFilter: Tag | undefined;
-
-  selectedProject?: Project;
-
   constructor(public router: Router) {}
 
-  setCategoryFilter(category: Category) {
-    this.categoryFilter = category;
-    this.tagFilter = undefined;
-  }
-
-  setTagFilter(tag: Tag) {
-    this.tagFilter = tag;
-    this.categoryFilter = undefined;
-  }
-
-  clearFilters() {
-    this.categoryFilter = undefined;
-    this.tagFilter = undefined;
-  }
-
-  setSelectedProject(project: Project) {
-    this.selectedProject = project;
-  }
-
-  clearSelectedProject() {
-    this.selectedProject = undefined;
+  navigateHome() {
+    this.router.navigate(['/']);
   }
 }
