@@ -13,7 +13,6 @@ h2 {
 
 p {
   font-size: 1.5rem;
-  // margin-top: 6rem;
   margin-bottom: 0;
   font-weight: 300;
 }
@@ -70,4 +69,14 @@ article {
 
 .projects-wrapper {
   padding: 5rem;
+  padding-left: 5rem;
+  padding-right: 5rem;
+  height: 100%;
+  margin: 0px;
+}
+
+main {
+  background-image: url("../../../assets/images/landing.JPG");
+  background-size: cover;
+  background-position: center;
 }
