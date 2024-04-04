@@ -1,14 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { Router } from '@angular/router'; // Import Router for service injection
+import { Router } from '@angular/router';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../models/project';
-import { RouterModule } from '@angular/router'; // Import RouterModule for routing functionality
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-landing-projects',
   standalone: true,
-  imports: [CommonModule, RouterModule], // Use RouterModule here for routing capabilities
+  imports: [CommonModule, RouterModule],
   templateUrl: './landing-projects.component.html',
   styleUrls: ['./landing-projects.component.scss'],
 })

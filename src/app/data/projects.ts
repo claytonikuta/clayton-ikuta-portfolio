@@ -237,7 +237,7 @@ export const PROJECTS: Project[] = [
     url: 'null',
     published_date: 'null',
     image: 'parts-sorter-circuit.JPG',
-    video: 'parts-sorter.mp4',
+    video: 'parts-sorter-mute.mp4',
     thumb: 'null',
     category_id: 2,
     created_at: '2024-03-13',
