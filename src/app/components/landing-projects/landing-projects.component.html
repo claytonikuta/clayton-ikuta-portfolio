@@ -1,9 +1,30 @@
 <section id="projects">
-  <article *ngFor="let project of projects">
+  <article
+    *ngFor="let project of projects"
+    (mouseover)="onMouseEnter(project.id)"
+    (mouseout)="onMouseLeave()"
+  >
     <a (click)="openProject(project)">
-      <section class="project-card">
+      <div class="project-card" [class.hover]="isHovered(project)">
+        <video
+          *ngIf="
+            isHovered(project) &&
+            project.video &&
+            project.video !== 'null' &&
+            project.video !== ''
+          "
+          [src]="'assets/videos/' + project.video"
+          autoplay
+          muted
+          loop
+        ></video>
         <img
-          *ngIf="project.image"
+          *ngIf="
+            !isHovered(project) ||
+            !project.video ||
+            project.video === 'null' ||
+            project.video === ''
+          "
           [src]="'assets/images/' + project.image"
           alt="Image of {{ project.name }}"
         />
@@ -11,7 +32,7 @@
           <h2>{{ project.name | uppercase }}</h2>
           <div>{{ project.excerpt }}</div>
         </div>
-      </section>
+      </div>
     </a>
   </article>
 </section>

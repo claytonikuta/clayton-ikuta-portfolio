@@ -14,11 +14,9 @@ import { RouterModule } from '@angular/router'; // Import RouterModule for routi
 })
 export class LandingProjectsComponent implements OnInit {
   projects: Project[] = [];
+  hoveredProjectId: number | null = null;
 
-  constructor(
-    private projectService: ProjectService,
-    private router: Router // Inject Router as a service, not in imports
-  ) {}
+  constructor(private projectService: ProjectService, private router: Router) {}
 
   ngOnInit(): void {
     this.getProjects();
@@ -40,5 +38,17 @@ export class LandingProjectsComponent implements OnInit {
     } else {
       this.router.navigate(['/projects/' + project.id]);
     }
+  }
+
+  onMouseEnter(projectId: number): void {
+    this.hoveredProjectId = projectId;
+  }
+
+  onMouseLeave(): void {
+    this.hoveredProjectId = null;
+  }
+
+  isHovered(project: Project): boolean {
+    return this.hoveredProjectId === project.id;
   }
 }

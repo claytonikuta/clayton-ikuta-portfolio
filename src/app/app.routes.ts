@@ -17,5 +17,5 @@ export const routes: Routes = [
     component: LandingProjectsComponent,
     pathMatch: 'full',
   },
-  { path: '**', redirectTo: '' },
+  // { path: '**', redirectTo: '' },
 ];
