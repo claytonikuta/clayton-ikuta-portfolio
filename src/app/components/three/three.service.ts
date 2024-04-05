@@ -1,5 +1,3 @@
-// three.service.ts
-
 import * as THREE from 'three';
 import { ElementRef, Injectable, NgZone, OnDestroy } from '@angular/core';
 
@@ -59,7 +57,7 @@ export class ThreeService implements OnDestroy {
     this.camera.position.z = distance;
     this.scene.add(this.camera);
 
-    this.light = new THREE.AmbientLight(0x404040);
+    this.light = new THREE.AmbientLight(0x404040); // Soft white light
     this.light.position.z = 10;
     this.scene.add(this.light);
 
@@ -68,16 +66,19 @@ export class ThreeService implements OnDestroy {
       uniforms: {
         mouse: { value: new THREE.Vector3(0, 0, 5) },
         time: { value: 0 },
+        scroll: { value: 0 }, // New uniform for scroll effect
       },
       vertexShader: `
         varying vec2 vUv;
         uniform float time;
         uniform vec2 mouse;
-      
+        uniform float scroll; // New
+
         void main() {
           vec3 pos = position;
           pos.z += sin(pos.x * 10.0 + time + mouse.x) * 0.1;
           pos.y += sin(pos.y * 10.0 + time + mouse.y) * 0.1;
+          pos.z += scroll; // Use scroll to affect z-position
           vUv = uv;
           gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
         }
@@ -114,6 +115,10 @@ export class ThreeService implements OnDestroy {
 
         this.material.uniforms['mouse'].value.x = mouseX;
         this.material.uniforms['mouse'].value.y = mouseY;
+      });
+      window.addEventListener('scroll', () => {
+        const scroll = window.scrollY / 1000;
+        this.material.uniforms['scroll'].value = scroll;
       });
     });
   }

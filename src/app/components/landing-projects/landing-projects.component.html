@@ -1,38 +1,41 @@
-<section id="projects">
-  <article
-    *ngFor="let project of projects"
-    (mouseover)="onMouseEnter(project.id)"
-    (mouseout)="onMouseLeave()"
-  >
-    <a (click)="openProject(project)">
-      <div class="project-card" [class.hover]="isHovered(project)">
-        <video
-          *ngIf="
-            isHovered(project) &&
-            project.video &&
-            project.video !== 'null' &&
-            project.video !== ''
-          "
-          [src]="'assets/videos/' + project.video"
-          autoplay
-          muted
-          loop
-        ></video>
-        <img
-          *ngIf="
-            !isHovered(project) ||
-            !project.video ||
-            project.video === 'null' ||
-            project.video === ''
-          "
-          [src]="'assets/images/' + project.image"
-          alt="Image of {{ project.name }}"
-        />
-        <div>
-          <h2>{{ project.name | uppercase }}</h2>
-          <div>{{ project.excerpt }}</div>
+<section id="landing-projects">
+  <h2>Projects</h2>
+  <div id="projects">
+    <article
+      *ngFor="let project of projects"
+      (mouseover)="onMouseEnter(project.id)"
+      (mouseout)="onMouseLeave()"
+    >
+      <a (click)="openProject(project)">
+        <div class="project-card" [class.hover]="isHovered(project)">
+          <video
+            *ngIf="
+              isHovered(project) &&
+              project.video &&
+              project.video !== 'null' &&
+              project.video !== ''
+            "
+            [src]="'assets/videos/' + project.video"
+            autoplay
+            muted
+            loop
+          ></video>
+          <img
+            *ngIf="
+              !isHovered(project) ||
+              !project.video ||
+              project.video === 'null' ||
+              project.video === ''
+            "
+            [src]="'assets/images/' + project.image"
+            alt="Image of {{ project.name }}"
+          />
+          <div>
+            <h2>{{ project.name | uppercase }}</h2>
+            <div>{{ project.excerpt }}</div>
+          </div>
         </div>
-      </div>
-    </a>
-  </article>
+      </a>
+    </article>
+  </div>
 </section>

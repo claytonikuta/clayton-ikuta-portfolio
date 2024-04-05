@@ -1,1 +1,153 @@
 // about.component.scss
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+article {
+  font-family: "Roboto", sans-serif;
+  padding: 2rem 5rem 2rem 5rem;
+  max-width: 85%;
+  margin: 2rem auto;
+  color: #333;
+  background: rgba(249, 249, 249, 0.5);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+h2,
+h3,
+h4 {
+  color: #2a2a2a;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  border-bottom: 2px solid #999;
+  padding-bottom: 0.5rem;
+}
+
+.schools,
+.languages,
+.frameworks,
+.database-management,
+.cloud-services {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  margin-bottom: 1rem;
+}
+
+.schools {
+  margin-bottom: 2rem;
+}
+
+.uvic,
+.bcit {
+  flex: 1;
+  min-width: 250px;
+  max-width: 350px;
+  h4 {
+    margin-top: 0;
+  }
+  h4,
+  p {
+    color: #333;
+  }
+}
+
+.schools a {
+  text-decoration: none;
+  color: inherit;
+
+  &:hover,
+  &:focus,
+  &:visited {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+.languages div,
+.frameworks div,
+.database-management div,
+.cloud-services div {
+  flex: 0 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-right: 2rem;
+  width: auto;
+}
+
+.uvic,
+.bcit,
+.languages div,
+.frameworks div,
+.database-management div,
+.cloud-services div {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  margin-right: 1rem;
+  transition: transform 0.2s;
+}
+
+.uvic:hover,
+.bcit:hover,
+.languages div:hover,
+.frameworks div:hover,
+.database-management div:hover,
+.cloud-services div:hover {
+  transform: translateY(-5px);
+}
+
+.languages i,
+.frameworks i,
+.database-management i,
+.cloud-services i {
+  font-size: 3rem;
+}
+
+.languages a,
+.frameworks a,
+.database-management a,
+.cloud-services a {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .schools,
+  .languages,
+  .frameworks,
+  .database-management,
+  .cloud-services {
+    justify-content: center;
+  }
+
+  .uvic,
+  .bcit {
+    flex: 0 0 100%;
+    min-width: 0;
+    margin-right: 0;
+  }
+
+  .languages div,
+  .frameworks div,
+  .database-management div,
+  .cloud-services div {
+    flex: 0 0 50%;
+    margin-right: 0;
+  }
+}
