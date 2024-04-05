@@ -237,7 +237,8 @@ export const PROJECTS: Project[] = [
     url: 'null',
     published_date: 'null',
     image: 'parts-sorter-circuit.JPG',
-    video: 'parts-sorter-mute.mp4',
+    video:
+      'https://clayton-ikuta-portfolio.s3.ca-central-1.amazonaws.com/parts-sorter-mute.mp4',
     thumb: 'null',
     category_id: 2,
     created_at: '2024-03-13',
