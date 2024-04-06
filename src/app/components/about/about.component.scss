@@ -3,7 +3,7 @@ article {
   font-family: "Roboto", sans-serif;
   padding: 2rem 5rem 2rem 5rem;
   max-width: 85%;
-  margin: 2rem auto;
+  margin: 2rem 3rem auto 3rem;
   color: #333;
   background: rgba(249, 249, 249, 0.5);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -132,7 +132,7 @@ p {
   .frameworks,
   .database-management,
   .cloud-services {
-    justify-content: center;
+    justify-content: space-around;
   }
 
   .uvic,
@@ -140,6 +140,7 @@ p {
     flex: 0 0 100%;
     min-width: 0;
     margin-right: 0;
+    margin-bottom: 1rem;
   }
 
   .languages div,
@@ -148,5 +149,23 @@ p {
   .cloud-services div {
     flex: 0 0 50%;
     margin-right: 0;
+  }
+
+  .languages a,
+  .frameworks a,
+  .database-management a,
+  .cloud-services a {
+    padding-right: 1rem;
+  }
+
+  .languages i,
+  .frameworks i,
+  .database-management i,
+  .cloud-services i {
+    font-size: 2rem;
+  }
+
+  article {
+    padding: 2rem 2rem 2rem 2rem;
   }
 }

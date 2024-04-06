@@ -1,5 +1,29 @@
 <header>
-  <h1 (click)="navigateHome()">{{ title }}</h1>
+  <div class="logo-title">
+    <h1 (click)="navigateHome()">{{ title }}</h1>
+  </div>
+  <div class="end">
+    <div class="nav">
+      <a
+        routerLink="/blogs"
+        routerLinkActive="active"
+        [routerLinkActiveOptions]="{ exact: true }"
+        ariaCurrentWhenActive="page"
+        >Blog</a
+      >
+    </div>
+    <div class="contact">
+      <a href="mailto:clayton.ikuta@gmail.com" target="_blank">
+        <img src="assets/images/email.svg" alt="Email" class="email" />
+      </a>
+      <a href="https://www.linkedin.com/in/clayton-ikuta/" target="_blank">
+        <img src="assets/images/linkedin.svg" alt="LinkedIn" class="linkedin" />
+      </a>
+      <a href="https://github.com/claytonikuta" target="_blank">
+        <img src="assets/images/github.svg" alt="Github" class="github" />
+      </a>
+    </div>
+  </div>
 </header>
 <main>
   <router-outlet></router-outlet>

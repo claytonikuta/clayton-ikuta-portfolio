@@ -1,0 +1,22 @@
+<article>
+  <header>
+    <button type="button" (click)="goBack()">Back</button>
+  </header>
+  <section class="blog-card">
+    <img
+      *ngIf="blog.image1"
+      [src]="'assets/images/' + blog.image1"
+      alt="Image of {{ blog.name }}"
+    />
+    <div>
+      <h2>{{ blog.name | uppercase }}</h2>
+      <div>{{ blog.excerpt }}</div>
+      <div [innerHTML]="blog.body">{{ blog.body }}</div>
+    </div>
+  </section>
+  <footer>
+    <div *ngIf="blog.category">
+      Category: <span>{{ blog.category.name }}</span>
+    </div>
+  </footer>
+</article>

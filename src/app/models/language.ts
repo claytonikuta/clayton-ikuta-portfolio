@@ -1,6 +1,5 @@
-export class Tag {
+export class Language {
   id!: number;
   name!: string;
   slug!: string;
-  pivot?: any;
 }

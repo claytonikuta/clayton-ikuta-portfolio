@@ -1,15 +1,11 @@
 // projects.component.scss
 
-#projects {
-  width: 100%;
-}
-
 img {
   max-width: 100%;
   height: auto;
 }
 
-.project-card {
+.blog-card {
   display: flex;
   flex-direction: column;
   overflow: hidden;
@@ -56,7 +52,7 @@ article {
   display: none;
 }
 
-#projects {
+#blogs {
   width: 100%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));

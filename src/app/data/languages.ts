@@ -1,6 +1,6 @@
-import { Tag } from '../models/tag';
+import { Language } from '../models/language';
 
-export const TAGS: Tag[] = [
+export const LANGUAGES: Language[] = [
   { id: 1, name: 'JavaScript', slug: 'javascript' },
   { id: 2, name: 'C#', slug: 'c#' },
   { id: 3, name: 'Angular', slug: 'angular' },

@@ -57,31 +57,38 @@ export class ThreeService implements OnDestroy {
     this.camera.position.z = distance;
     this.scene.add(this.camera);
 
-    this.light = new THREE.AmbientLight(0x404040); // Soft white light
+    this.light = new THREE.AmbientLight(0x404040);
     this.light.position.z = 10;
     this.scene.add(this.light);
 
-    const geometry = new THREE.SphereGeometry(1, 64, 64);
+    const geometry = new THREE.SphereGeometry(0.8, 64, 64);
     this.material = new THREE.ShaderMaterial({
       uniforms: {
         mouse: { value: new THREE.Vector3(0, 0, 5) },
         time: { value: 0 },
-        scroll: { value: 0 }, // New uniform for scroll effect
+        scroll: { value: 0 },
       },
       vertexShader: `
         varying vec2 vUv;
         uniform float time;
         uniform vec2 mouse;
-        uniform float scroll; // New
+        uniform float scroll;
+
 
         void main() {
           vec3 pos = position;
-          pos.z += sin(pos.x * 10.0 + time + mouse.x) * 0.1;
-          pos.y += sin(pos.y * 10.0 + time + mouse.y) * 0.1;
-          pos.z += scroll; // Use scroll to affect z-position
+          float mouseEffectX = sin(pos.x * 5.0 + time + mouse.x * 0.5) * 0.05;
+          float mouseEffectY = sin(pos.y * 5.0 + time + mouse.y * 0.5) * 0.05;
+          // float scrollEffect = scroll * 2.0;      
+          float oscillatingScroll = sin(scroll) + 10.0;
+          float scrollEffect = oscillatingScroll * 3.0;
+          pos.x += mouseEffectX;
+          pos.y += mouseEffectY;
+          pos.z += mouseEffectX + mouseEffectY + scrollEffect;
+      
           vUv = uv;
           gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
-        }
+      }  
       `,
       fragmentShader: `
         varying vec2 vUv;
@@ -117,7 +124,7 @@ export class ThreeService implements OnDestroy {
         this.material.uniforms['mouse'].value.y = mouseY;
       });
       window.addEventListener('scroll', () => {
-        const scroll = window.scrollY / 1000;
+        const scroll = (window.scrollY / window.innerHeight) * 50;
         this.material.uniforms['scroll'].value = scroll;
       });
     });
