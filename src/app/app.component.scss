@@ -5,6 +5,14 @@ header {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding-top: 0.7rem;
+  padding-bottom: 0.7rem;
+}
+
+.logo-title {
+  display: flex;
+  align-items: center;
+  align-self: center;
 }
 
 .logo-title h1 {

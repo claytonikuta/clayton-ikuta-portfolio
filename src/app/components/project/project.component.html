@@ -3,15 +3,24 @@
     <button type="button" (click)="goBack()">Back</button>
   </header>
   <section class="project-card">
-    <img
-      *ngIf="project.image1"
-      [src]="'assets/images/' + project.image1"
-      alt="Image of {{ project.name }}"
-    />
-    <div>
+    <div *ngIf="videoUrl" class="video-container">
+      <video [src]="project.video" controls class="media-item"></video>
+    </div>
+
+    <carousel>
+      <slide *ngFor="let item of mediaItems; let i = index">
+        <img
+          [src]="'assets/images/' + item"
+          alt="Image {{ i }}"
+          class="d-block w-100"
+        />
+      </slide>
+    </carousel>
+
+    <div class="content">
       <h2>{{ project.name | uppercase }}</h2>
       <div>{{ project.excerpt }}</div>
-      <div [innerHTML]="project.body">{{ project.body }}</div>
+      <div [innerHTML]="project.body"></div>
     </div>
   </section>
   <footer>
