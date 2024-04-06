@@ -12,6 +12,7 @@ export class Project {
   'image2': string | null;
   'image3': string | null;
   'image4': string | null;
+  'image5': string | null;
   'video': string | null;
   'thumb': string | null;
   'category_id': number | null;

@@ -80,6 +80,41 @@ footer {
   }
 }
 
+.carousel {
+  height: 500px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-inner,
+.carousel-item {
+  width: 100%;
+  align-items: center;
+}
+
+.slide {
+  text-align: center;
+}
+
+::ng-deep .carousel-control-prev-icon,
+::ng-deep .carousel-control-next-icon {
+  filter: none;
+  color: black;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+::ng-deep .carousel-indicators {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 @media (max-width: 768px) {
   article {
     padding: 1rem;

@@ -8,6 +8,15 @@
       [src]="'assets/images/' + blog.image1"
       alt="Image of {{ blog.name }}"
     />
+    <!-- <carousel>
+      <slide *ngFor="let item of mediaItems; let i = index">
+        <img
+          [src]="'assets/images/' + item"
+          alt="Image {{ i }}"
+          class="d-block w-100"
+        />
+      </slide>
+    </carousel> -->
     <div>
       <h2>{{ blog.name | uppercase }}</h2>
       <div>{{ blog.excerpt }}</div>
