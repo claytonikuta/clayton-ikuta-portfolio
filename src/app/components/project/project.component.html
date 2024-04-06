@@ -4,8 +4,8 @@
   </header>
   <section class="project-card">
     <img
-      *ngIf="project.image"
-      [src]="'assets/images/' + project.image"
+      *ngIf="project.image1"
+      [src]="'assets/images/' + project.image1"
       alt="Image of {{ project.name }}"
     />
     <div>
@@ -15,14 +15,8 @@
     </div>
   </section>
   <footer>
-    <div *ngIf="project.category">
-      Theme: <span>{{ project.category.name }}</span>
-    </div>
-    <div *ngIf="project?.tags?.length">
-      Tags:
-      <span *ngFor="let tag of project.tags">
-        {{ tag.name }}
-      </span>
+    <div *ngIf="project.languages">
+      Theme: <span>{{ project.languages.name }}</span>
     </div>
   </footer>
 </article>

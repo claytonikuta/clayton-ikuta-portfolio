@@ -1,5 +1,4 @@
 import { Category } from './category';
-import { Tag } from './tag';
 
 export class Project {
   'id': number;
@@ -9,12 +8,14 @@ export class Project {
   'body': string;
   'url': string | null;
   'published_date': string | null;
-  'image': string | null;
+  'image1': string | null;
+  'image2': string | null;
+  'image3': string | null;
+  'image4': string | null;
   'video': string | null;
   'thumb': string | null;
   'category_id': number | null;
   'created_at': string;
   'updated_at': string;
-  'category': Category | null;
-  'tags': Tag[] | undefined;
+  'languages': Category | null;
 }

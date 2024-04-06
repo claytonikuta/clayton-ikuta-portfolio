@@ -1,0 +1,6 @@
+<article id="languages">
+  <h3>Languages</h3>
+  <div *ngFor="let language of languages" (click)="setLanguageFilter(language)">
+    {{ language.name }}
+  </div>
+</article>

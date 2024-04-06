@@ -7,30 +7,25 @@ import {
   RouterLink,
 } from '@angular/router';
 
-import { ProjectsComponent } from './components/projects/projects.component';
 import { ProjectComponent } from './components/project/project.component';
 
 import { CategoriesComponent } from './components/categories/categories.component';
-import { TagsComponent } from './components/tags/tags.component';
+import { LanguagesComponent } from './components/languages/languages.component';
 
-import { BlogComponent } from './components/blog/blog.component';
-
-import { ProjectFilterPipe } from './pipes/project-filter.pipe';
+import { BlogsComponent } from './components/blogs/blogs.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
   imports: [
-    BlogComponent,
+    BlogsComponent,
     RouterOutlet,
     RouterLink,
     RouterLinkActive,
     CommonModule,
-    ProjectFilterPipe,
-    ProjectsComponent,
     ProjectComponent,
     CategoriesComponent,
-    TagsComponent,
+    LanguagesComponent,
   ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
