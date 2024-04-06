@@ -73,13 +73,47 @@ article {
   margin: 0px;
 }
 
+.header {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.three-wrapper {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (max-width: 1160px) {
+  h1 {
+    font-size: 5rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
 @media (max-width: 768px) {
   .landing {
     flex-direction: column;
+    justify-content: space-around;
+    padding-left: 1rem;
   }
 
-  .header,
   .three-wrapper,
+  .header {
+    margin-top: 1rem;
+  }
+
+  article {
+    flex-direction: column;
+    align-items: center;
+  }
+
   .projects-wrapper,
   .about-wrapper,
   .other-wrapper {

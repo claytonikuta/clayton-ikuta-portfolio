@@ -10,8 +10,8 @@ import { BlogComponent } from './components/blog/blog.component';
 export const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
   { path: 'projects/:id', component: ProjectComponent },
-  { path: 'about', component: AboutComponent, pathMatch: 'full' },
-  { path: 'three', component: ThreeComponent, pathMatch: 'full' },
+  // { path: 'about', component: AboutComponent, pathMatch: 'full' },
+  // { path: 'three', component: ThreeComponent, pathMatch: 'full' },
   { path: 'blogs', component: BlogsComponent, pathMatch: 'full' },
   { path: 'blogs/:id', component: BlogComponent },
   {

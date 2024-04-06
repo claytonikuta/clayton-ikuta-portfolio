@@ -20,12 +20,15 @@ export class BlogsComponent implements OnInit {
   constructor(private blogService: BlogService, public router: Router) {}
 
   blogs: Blog[] = [];
-  getBlogs(): void {
-    this.blogService.getBlogs().subscribe((blogs) => (this.blogs = blogs));
-  }
 
   ngOnInit(): void {
     this.getBlogs();
+  }
+
+  getBlogs(): void {
+    this.blogService.getBlogs().subscribe((blogs) => {
+      this.blogs = blogs.reverse();
+    });
   }
 
   @Input() categoryFilter: Category | undefined;

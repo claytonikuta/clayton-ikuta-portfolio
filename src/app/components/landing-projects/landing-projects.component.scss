@@ -1,7 +1,7 @@
 // projects.component.scss
 section#landing-projects {
   font-family: "Roboto", sans-serif;
-  padding: 3rem;
+  padding: 2rem;
   margin: 2rem auto;
   color: #333;
   background: rgba(249, 249, 249, 0.5);
@@ -15,25 +15,22 @@ section#landing-projects {
   }
 
   h2 {
-    margin: 2rem 0 1rem;
+    margin: 2rem 1rem 1rem;
     color: #333;
     font-weight: 700;
     font-size: 2rem;
   }
 
   #projects {
-    display: grid;
-    grid-template-columns: repeat(
-      auto-fill,
-      minmax(calc(100% / 4 - 1rem), 1fr)
-    );
-    grid-gap: 1rem;
-    justify-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
     padding: 0;
   }
 
   .project-card {
     display: flex;
+    width: 270px;
     flex-direction: column;
     align-items: center;
     background-color: #f8f8f8;
@@ -41,6 +38,7 @@ section#landing-projects {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    margin: 1rem 0.5rem 1rem 0.5rem;
 
     &:hover {
       transform: translateY(-5px);
@@ -49,8 +47,8 @@ section#landing-projects {
 
     img,
     video {
-      width: 100%;
-      height: 200px;
+      width: 270px;
+      height: 180px;
       object-fit: cover;
     }
 
@@ -86,6 +84,18 @@ section#landing-projects {
     }
 
     .project-card {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (min-width: 1900px) {
+    .project-card {
+      width: 380px;
+      img,
+      video {
+        width: 380px;
+        height: 250px;
+      }
     }
   }
 }
