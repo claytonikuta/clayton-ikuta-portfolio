@@ -5,6 +5,7 @@ import { AboutComponent } from './components/about/about.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { ThreeComponent } from './components/three/three.component';
 import { LandingProjectsComponent } from './components/landing-projects/landing-projects.component';
+import { BlogComponent } from './components/blog/blog.component';
 
 export const routes: Routes = [
   { path: '', component: LandingComponent, pathMatch: 'full' },
@@ -12,6 +13,7 @@ export const routes: Routes = [
   { path: 'projects/:id', component: ProjectComponent },
   { path: 'about', component: AboutComponent, pathMatch: 'full' },
   { path: 'three', component: ThreeComponent, pathMatch: 'full' },
+  { path: 'blog', component: BlogComponent, pathMatch: 'full' },
   {
     path: 'landing-projects',
     component: LandingProjectsComponent,
