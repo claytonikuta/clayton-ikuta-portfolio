@@ -1,39 +1,44 @@
 <!-- blogs.component.html -->
-<div class="main-container">
-  <section id="blogs">
-    <article
-      *ngFor="let blog of blogs"
-      [class.hidden]="categoryFilter && blog.category?.id != categoryFilter.id"
-      (click)="setSelectedBlog(blog)"
-    >
-      <a href="/blogs/{{ blog?.id }}">
-        <section class="blog-card">
-          <img
-            *ngIf="blog.image1"
-            [src]="'assets/images/' + blog.image1"
-            alt="Image of {{ blog.name }}"
-          />
-          <div>
-            <h2>{{ blog.name | uppercase }}</h2>
-            <div>{{ blog.excerpt }}</div>
-          </div>
-        </section>
-      </a>
-    </article>
-  </section>
-  <section id="side-nav" *ngIf="router.url === '/blogs'">
-    <article *ngIf="categoryFilter">
-      <h2>Filter:</h2>
-      <div class="current-filter" (click)="clearFilters()">
-        {{ categoryFilter?.name }}
-        <i class="bi bi-trash"></i>
-      </div>
-    </article>
-    <article id="categories">
-      <app-categories
-        [categoryFilter]="categoryFilter"
-        (newCategoryFilterEvent)="setCategoryFilter($event)"
-      ></app-categories>
-    </article>
-  </section>
+<div class="main">
+  <h1>Blog</h1>
+  <div class="content">
+    <section id="blogs">
+      <article
+        *ngFor="let blog of blogs"
+        [class.hidden]="
+          categoryFilter && blog.category?.id != categoryFilter.id
+        "
+        (click)="setSelectedBlog(blog)"
+      >
+        <a href="/blogs/{{ blog?.id }}">
+          <section class="blog-card">
+            <img
+              *ngIf="blog.image1"
+              [src]="'assets/images/' + blog.image1"
+              alt="Image of {{ blog.name }}"
+            />
+            <div>
+              <h2>{{ blog.name | uppercase }}</h2>
+              <p>{{ blog.excerpt }}</p>
+            </div>
+          </section>
+        </a>
+      </article>
+    </section>
+    <section id="side-nav" *ngIf="router.url === '/blogs'">
+      <article *ngIf="categoryFilter">
+        <h2>Filter:</h2>
+        <div class="current-filter" (click)="clearFilters()">
+          {{ categoryFilter?.name }}
+          <i class="bi bi-trash"></i>
+        </div>
+      </article>
+      <article id="categories">
+        <app-categories
+          [categoryFilter]="categoryFilter"
+          (newCategoryFilterEvent)="setCategoryFilter($event)"
+        ></app-categories>
+      </article>
+    </section>
+  </div>
 </div>
