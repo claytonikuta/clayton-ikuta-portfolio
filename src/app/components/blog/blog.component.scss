@@ -30,21 +30,6 @@ article {
   transition: transform 0.3s ease, left 0.3s ease, top 0.3s ease;
 }
 
-/*
-.gallery-image:hover {
-  transform: scale(2);
-}
-*/
-
-// .gallery-image.expanded {
-//   transform: scale(2);
-//   position: absolute;
-//   z-index: 1;
-//   top: 50%;
-//   left: 50%;
-//   transform: translate(-50%, -50%) scale(2);
-// }
-
 body.expanded-image {
   background-color: rgba(0, 0, 0, 0.5);
 }
@@ -124,43 +109,25 @@ footer {
   }
 }
 
-.carousel {
-  height: 500px;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.carousel-inner,
-.carousel-item {
-  width: 100%;
-  align-items: center;
-}
-
-.slide {
-  text-align: center;
-}
-
-::ng-deep .carousel-control-prev-icon,
-::ng-deep .carousel-control-next-icon {
-  filter: none;
-  color: black;
-  background-color: rgba(0, 0, 0, 0.5);
-  border-radius: 50%;
-  width: 34px;
-  height: 34px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-::ng-deep .carousel-indicators {
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
 @media (max-width: 768px) {
   article {
     margin: 1rem;
+  }
+  .blog-card img {
+    margin-bottom: 0;
+  }
+  h2 {
+    margin-top: 1rem;
+  }
+}
+
+@media (max-width: 435px) {
+  .gallery-image-container {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 0.5rem;
+  }
+  .gallery-image {
+    height: 100px;
+    width: 140px;
   }
 }
