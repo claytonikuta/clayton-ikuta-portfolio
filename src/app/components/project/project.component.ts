@@ -1,11 +1,10 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { CarouselModule } from 'ngx-bootstrap/carousel';
 import { ProjectService } from '../../services/project.service';
 import { Project } from '../../models/project';
-
 @Component({
   selector: 'app-project',
   standalone: true,
@@ -14,6 +13,7 @@ import { Project } from '../../models/project';
   styleUrl: './project.component.scss',
 })
 export class ProjectComponent implements OnInit {
+  @ViewChild('article') article: ElementRef;
   project!: Project;
   mediaItems: (string | null)[] = [];
   videoUrl: string | null = null;
@@ -27,6 +27,11 @@ export class ProjectComponent implements OnInit {
   ngOnInit(): void {
     this.getProject();
   }
+
+  ngAfterViewInit(): void {
+    this.article.nativeElement.scrollTop = 0;
+  }
+
   getProject(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.project = this.projectService.getProject(id);
