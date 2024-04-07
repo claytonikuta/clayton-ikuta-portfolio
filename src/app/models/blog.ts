@@ -15,7 +15,6 @@ export class Blog {
   'image5': string | null;
   'image6': string | null;
   'image7': string | null;
-  'image8': string | null;
   'video': string | null;
   'thumb': string | null;
   'category_id': number | null;

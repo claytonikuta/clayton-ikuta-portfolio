@@ -101,7 +101,7 @@ body {
   align-self: flex-start;
 
   article {
-    margin-bottom: 15px;
+    margin-bottom: 5px;
   }
 
   .current-filter {
@@ -110,6 +110,7 @@ body {
     border-radius: 15px;
     display: inline-block;
     margin-bottom: 10px;
+    cursor: pointer;
   }
   .filter-container {
     padding-left: 2rem;
@@ -123,7 +124,7 @@ a {
 
 @media (max-width: 768px) {
   .main {
-    padding: 1rem;
+    padding: 2rem;
   }
 
   .main .content #blogs {

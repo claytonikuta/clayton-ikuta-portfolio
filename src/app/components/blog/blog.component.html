@@ -4,28 +4,35 @@
   </header>
   <section class="blog-card">
     <img
-      *ngIf="blog.image1"
-      [src]="'assets/images/' + blog.image1"
+      *ngIf="mediaItems.length === 1"
+      [src]="'assets/images/' + mediaItems[0]"
       alt="Image of {{ blog.name }}"
     />
-    <!-- <carousel>
-      <slide *ngFor="let item of mediaItems; let i = index">
+
+    <div class="gallery-image-container" *ngIf="mediaItems.length > 1">
+      <div
+        *ngFor="let item of mediaItems; let i = index"
+        (click)="
+          expandedIndex = expandedIndex === i ? null : i;
+          toggleBodyClass(expandedIndex === i)
+        "
+        [ngClass]="{ expanded: expandedIndex === i }"
+      >
         <img
           [src]="'assets/images/' + item"
-          alt="Image {{ i }}"
-          class="d-block w-100"
+          [alt]="'Image of ' + blog.name"
+          class="gallery-image"
+          [ngClass]="{ expanded: expandedIndex === i }"
         />
-      </slide>
-    </carousel> -->
+      </div>
+    </div>
+
     <div>
       <h2>{{ blog.name | uppercase }}</h2>
-      <div>{{ blog.excerpt }}</div>
       <div [innerHTML]="blog.body">{{ blog.body }}</div>
     </div>
   </section>
-  <footer>
-    <div *ngIf="blog.category">
-      Category: <span>{{ blog.category.name }}</span>
-    </div>
+  <footer *ngIf="blog.category">
+    Category: <span>{{ blog.category.name }}</span>
   </footer>
 </article>
