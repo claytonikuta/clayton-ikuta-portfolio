@@ -110,7 +110,7 @@ article {
   }
 
   .three-wrapper {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
 
   article {
@@ -136,5 +136,33 @@ article {
 
   p {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 630px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 460px) {
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  p {
+    font-size: 0.9rem;
   }
 }

@@ -26,7 +26,7 @@ export const PROJECTS: Project[] = [
     name: 'Outdoor Web Store',
     slug: 'Outdoor Web Store',
     excerpt:
-      'A fully functioning web store for outdoor gear, completed as part of a team.',
+      'A collaborative project delivering a fully-functional online store specializing in outdoor gear.',
     body: '<p>A fully designed system for sustainable revenue generation. Built using C# to showcase a realistic web store.</p>',
     url: 'https://wildpath.azurewebsites.net/',
     published_date: 'null',

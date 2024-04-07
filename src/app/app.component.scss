@@ -55,7 +55,6 @@ footer {
   text-decoration: none;
   font-family: "Roboto", "Helvetica Neue", sans-serif;
   font-size: 1.5rem;
-  padding: 0.5rem 0.5rem;
   font-weight: 100;
   border-radius: 5px;
   transition: background-color 0.3s ease;
@@ -70,6 +69,11 @@ footer {
   display: flex;
   align-items: flex-end;
   padding-right: 3rem;
+}
+
+h1 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
 }
 
 @media (max-width: 768px) {
