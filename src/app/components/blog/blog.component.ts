@@ -14,13 +14,15 @@ import { Blog } from '../../models/blog';
   styleUrl: './blog.component.scss',
 })
 export class BlogComponent implements OnInit {
+  blog!: Blog;
+  mediaItems: (string | null)[] = [];
+  expandedIndex: number | null = null;
+
   constructor(
     private route: ActivatedRoute,
     private blogService: BlogService,
     private location: Location
   ) {}
-  blog!: Blog;
-  mediaItems: (string | null)[] = [];
 
   ngOnInit(): void {
     this.getBlog();
@@ -42,9 +44,21 @@ export class BlogComponent implements OnInit {
       this.blog.image5,
       this.blog.image6,
       this.blog.image7,
-      this.blog.image8,
-    ].filter((img) => img !== null);
+    ].filter((img) => img !== null && img !== 'null');
     this.mediaItems = images;
-    console.log(this.mediaItems);
+  }
+
+  toggleExpand(index: number): void {
+    console.log(`Image at index ${index} clicked`);
+    this.expandedIndex = this.expandedIndex === index ? null : index;
+  }
+
+  toggleBodyClass(isExpanded: boolean): void {
+    const body = document.body;
+    if (isExpanded) {
+      body.classList.add('expanded-image');
+    } else {
+      body.classList.remove('expanded-image');
+    }
   }
 }
