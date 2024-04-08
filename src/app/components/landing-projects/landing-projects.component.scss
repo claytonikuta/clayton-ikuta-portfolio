@@ -28,9 +28,18 @@ section#landing-projects {
     padding: 0;
   }
 
+  .project {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+  }
+
   .project-card {
     display: flex;
+    flex: 1;
+    justify-content: flex-start;
     width: 270px;
+    min-height: 370px;
     flex-direction: column;
     align-items: center;
     background-color: #f8f8f8;
