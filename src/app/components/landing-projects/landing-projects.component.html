@@ -5,6 +5,8 @@
       *ngFor="let project of projects"
       (mouseover)="onMouseEnter(project.id)"
       (mouseout)="onMouseLeave()"
+      div
+      class="project"
     >
       <a (click)="openProject(project)">
         <div class="project-card" [class.hover]="isHovered(project)">
